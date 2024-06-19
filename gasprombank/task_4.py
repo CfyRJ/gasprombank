@@ -27,6 +27,6 @@ def remove_old_file(path_dir: str, days=5) -> bool:
                 try:
                     os.remove(file)
                     result = 'All relevant files have been deleted.'
-                except:
+                except FileNotFoundError:
                     raise 'Error removing file.'
     return result
